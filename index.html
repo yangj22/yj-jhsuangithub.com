@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0" />
+        <title></title>
+        <link href="swiper.min.css" rel="stylesheet" />
+        <style>
+            *{margin:0; padding:0;}
+            h1,h2,h3,h4,h5,h6{font-weight:normal; font-size:12px;}
+            li{list-style:none;}
+            a{text-decoration:none; color:#000;}
+            b,strong{font-weight:normal;}
+            i,em{font-style:normal;}
+            img{vertical-align:top;}
+            .fl{float:left;}
+            .fr{float:right;}
+            .clearfix:after{display:block; content:''; clear:both;}
+            .clearfix{zoom:1;}
+            body{
+                overflow-x: hidden;
+            }
+            html{font-size: 20px; font-family: "Microsoft Yahei";}
+            header{ background:-webkit-linear-gradient(#fff,#ebebeb);position:relative;}
+            .back{
+                background: url(img/back.png) no-repeat;
+                width:3.2rem; height:1.55rem; background-size:contain;
+                position: absolute;
+                top: 0.5rem;
+                left: 0.5rem;
+            }
+            header .logo{
+                 width: 100%;
+                height: 2.5rem;
+                background: url(img/log.png) no-repeat center;
+                background-size: 3.7rem 1rem;
+            }
+            .swiper-container{ width:100%; height:6.675rem; position: relative;}
+            .swiper-container-horizontal{
+                overflow: visible;
+            }
+            .swiper-pagination-bullets{
+                top: 6.5rem;
+                bottom: 0;
+            }
+            .swiper-container .l1{
+                width: 16rem;
+                height: 6.675rem;
+                background: url(img/banner.jpg) no-repeat;
+                background-size: 16rem 6.675rem;
+            }
+            .swiper-container .l2{
+                width: 16rem;
+                height: 6.675rem;
+                background: url(img/1.jpg) no-repeat;
+                background-size: 16rem 6.675rem;
+            }
+            .swiper-container .l3{
+                width: 16rem;
+                height: 6.675rem;
+                background: url(img/2.jpg) no-repeat;
+                background-size: 16rem 6.675rem;
+            }
+            .swiper-container .l4{
+                width: 16rem;
+                height: 6.675rem;
+                background: url(img/3.jpg) no-repeat;
+                background-size: 16rem 6.675rem;
+            }
+            .swiper-container .l5{
+                width: 16rem;
+                height: 6.675rem;
+                background: url(img/4.jpg) no-repeat;
+                background-size: 16rem 6.675rem;
+            }
+            .swiper-container .swiper-pagination-bullet{
+                width: 0.2rem;
+                height: 0.2rem;
+            }
+            .swiper-pagination-bullet-active{
+                color: #ff4300;
+            }
+            nav ul {
+                margin-top: 1rem;
+            }
+            nav ul li{
+                width: 25%;
+                float: left;
+                text-align: center;
+            }
+            nav ul a{
+                width: 100%;
+                height: 100%;
+                background:url(img/nav.png) no-repeat top;
+                background-size: 2rem 2rem;
+                padding-top: 2.5rem;
+                margin-bottom: 1rem;
+                font-size:0.55rem;
+                color:#999;
+                display:block;
+            }
+            .pm{
+              width: 15rem;
+              border-bottom: 0.1rem solid #dcdcdc;
+              margin-left: 0.5rem;
+            }
+            .pm  div{
+                width: 0.1rem;
+                height: 0.75rem;
+                background:#d51938;
+                margin-bottom:0.5rem;
+            }
+            .pm .l{
+              padding-left: 0.45rem;
+              font-size:  0.67rem;
+              color: #333;
+              font-weight: bold;
+              line-height: 0.75rem;
+              padding-bottom: 0.5rem;
+            }
+            .pm .r{
+              font-size: 0.6rem;
+              color: #333;
+              font-weight: bold;
+              padding-bottom: 0.6rem;
+            }
+            .goods li{
+              overflow: hidden;
+
+            }
+            .goods{
+              margin-left: 0.5rem;
+              margin-top: 1.55rem;
+            }
+            .goods .acc{
+              width: 1.5rem;
+              height: 3rem;
+              background:#e00202;
+              line-height: 3rem;
+              text-align: center;
+              color: #fff;
+              font-size: 0.875rem;
+              font-weight: bold;
+            }
+            .goods li{
+              margin-bottom: 0.5rem;
+            }
+            .goods img{
+              width: 4.5rem;
+              height: 3rem;
+            }
+            .goods .price{
+              width: 9rem;
+              height: 3rem;
+              background: #f4f4f4;
+            }
+            .goods .price div{
+              height: 1.5rem;
+              width: 4rem;
+              font-size: 0.625rem;
+              color: #999;
+              line-height: 0.925rem;
+              margin-top: 0.72rem;
+              margin-left: 0.55rem;
+            }
+            .goods em{
+              font-size: 0.65rem;
+              color: #d51938;
+              margin-top: 1rem;
+              margin-right: 1.27rem;
+            }
+            .more{
+                width: 15rem;
+                height: 2rem;
+                margin: 0.5rem auto;
+                background-color: #f5f5f5;
+                overflow: hidden;
+            }
+            .more h3{
+                font-size: 0.7rem;
+                line-height: 2rem;
+                color: #666;
+                float: left;
+                padding-left: 4.75rem;
+            }
+            .more a{
+                background: url(img/jt2.png) no-repeat;
+                background-size: 0.325rem 0.55rem;
+                width: 0.325rem;
+                height: 0.55rem;
+                margin-top: 0.825rem;
+                margin-right: 0.475rem;
+                float: right;
+            }
+            .family{
+                width: 15rem;
+                height: 8.85rem;
+                margin: 0 auto;
+            }
+            .family .f_left{
+                height: 8.8rem;
+                width: 25%;
+                background-image: url(img/family.png);
+                background-size: 3.725rem 8.8rem;
+            }
+            .family table{
+                width: 75%;
+                border:1px solid #eee;
+                border-collapse:collapse;
+            }
+            .family table td{
+                border:0.025rem solid #eee;
+                width: 25%;
+                height: 2.15rem;
+                line-height: 2.15rem;
+                font-size: 0.7rem;
+                color: #999;
+                text-align: center;
+                vertical-align: middle;
+            }
+            .logo{
+                width: 14.95rem;
+                height: 3.95rem;
+                border: 1px solid #dcdcdc;
+                margin: 0 auto;
+                overflow: hidden;
+            }
+            .logo div{
+                float: left;
+                width: 4.95rem;
+                height:3.95rem;
+                border-right:0.025rem solid #dcdcdc;
+            }
+            .logo img{
+                margin-top: 0.775rem;
+                margin-left: 2rem;
+            }
+            .logo p{
+                font-size: 0.575rem;
+                color: #999;
+                text-align: center;
+                padding-top: 0.9rem;
+            }
+            .logo .last{
+                width: 4.9rem;
+                border-right:0;
+                float: left;
+            }
+            .zc{
+                width: 15rem;
+                height: 2.2rem;
+                background: #dfdfdf;
+                margin:0 auto;
+                margin-top: 0.225rem;
+            }
+            .zc .zc_1 a{
+                line-height: 2.2rem;
+                color: #333;
+                font-weight: bold;
+                font-size: 0.65rem;
+            }
+            .zc .zc_1 .a1{
+                margin-right: 1.225rem;
+            }
+            .zc .zc_2 i{
+                font-size: 0.55rem;
+                font-weight: bold;
+                line-height: 2.2rem;
+            }
+            .zc .zc_2 a{
+                background: url(img/xs.png) no-repeat;
+                background-size:   0.85rem 0.225rem;
+                width: 0.85rem;
+                height: 0.225rem;
+                margin-top: 0.925rem;
+            }
+            footer{
+                width: 100%;
+                height: 8.5rem;
+                background: #eee;
+            }
+            footer div{
+                width: 4.75rem;
+                margin: 0 auto;
+            }
+            footer a{
+                font-size: 0.7rem;
+            }
+            footer .a1{
+                margin-right: 0.5rem;
+            }
+            footer .footer{
+                font-size: 0.55rem;
+                text-align: center;
+            }
+            #box{
+                width: 100%;
+                background: #dfdfdf;
+            }
+        </style>
+        <script src="swiper.min.js"></script>
+        <script>
+        window.onload=function(){
+            ;(function (win,doc){
+            	function change(){
+            		doc.documentElement.style.fontSize=20*doc.documentElement.clientWidth/320+'px';
+            	}
+            	change();
+            	win.addEventListener('resize',change,false);
+            })(window,document);
+        	new Swiper('.swiper-container',{
+                	pagination:'.swiper-pagination',
+        	});
+        }
+        </script>
+    </head>
+    <body>
+        <header>
+            <div class="back"></div>
+            <div class="logo"></div>
+        </header>
+        <div class="swiper-container">
+        	<div class="swiper-wrapper">
+            	<div class="swiper-slide l1"></div>
+            	<div class="swiper-slide l2"></div>
+            	<div class="swiper-slide l3"></div>
+            	<div class="swiper-slide l4"></div>
+            	<div class="swiper-slide l5"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <nav>
+            <ul class="clearfix">
+                <li>
+                    <a href="javascript:;">商品</a>
+                </li>
+                <li>
+                    <a href="javascript:;">商品</a>
+                </li>
+                <li>
+                    <a href="javascript:;">商品</a>
+                </li>
+                <li>
+                    <a href="javascript:;">商品</a>
+                </li>
+                <li>
+                    <a href="javascript:;">商品</a>
+                </li>
+                <li>
+                    <a href="javascript:;">商品</a>
+                </li>
+                <li>
+                    <a href="javascript:;">商品</a>
+                </li>
+                <li>
+                    <a href="javascript:;">商品</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="clearfix pm">
+            <div class="fl"></div>
+            <h1 class="fl l">聚划算热卖产品</h1>
+            <h1 class="fr r">TOP10</h1>
+        </div>
+        <section class="goods">
+            <ul>
+                <li>
+                    <a href="javascript:;" class="clearfix">
+                      <span class="acc fl">1</span>
+                      <img src="img/shoop.png " alt="" class="fl">
+                      <div class="price fl">
+                          <div class="fl">
+                          	已售68423<br/>
+                          	2.3折 ￥299
+                          </div>
+                          <b class="fr"></b>
+                          <em class="fr">￥51</em>
+
+                      </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="clearfix">
+                      <span class="acc fl">1</span>
+                      <img src="img/shoop.png " alt="" class="fl">
+                      <div class="price fl">
+                          <div class="fl">
+                          	已售68423<br/>
+                          	2.3折 ￥299
+                          </div>
+                          <b class="fr"></b>
+                          <em class="fr">￥51</em>
+
+                      </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="clearfix">
+                      <span class="acc fl">1</span>
+                      <img src="img/shoop.png " alt="" class="fl">
+                      <div class="price fl">
+                          <div class="fl">
+                          	已售68423<br/>
+                          	2.3折 ￥299
+                          </div>
+                          <b class="fr"></b>
+                          <em class="fr">￥51</em>
+
+                      </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="clearfix">
+                      <span class="acc fl">1</span>
+                      <img src="img/shoop.png " alt="" class="fl">
+                      <div class="price fl">
+                          <div class="fl">
+                          	已售68423<br/>
+                          	2.3折 ￥299
+                          </div>
+                          <b class="fr"></b>
+                          <em class="fr">￥51</em>
+
+                      </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="clearfix">
+                      <span class="acc fl">1</span>
+                      <img src="img/shoop.png " alt="" class="fl">
+                      <div class="price fl">
+                          <div class="fl">
+                          	已售68423<br/>
+                          	2.3折 ￥299
+                          </div>
+                          <b class="fr"></b>
+                          <em class="fr">￥51</em>
+                      </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="clearfix">
+                      <span class="acc fl">1</span>
+                      <img src="img/shoop.png " alt="" class="fl">
+                      <div class="price fl">
+                          <div class="fl">
+                          	已售68423<br/>
+                          	2.3折 ￥299
+                          </div>
+                          <b class="fr"></b>
+                          <em class="fr">￥51</em>
+                      </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="clearfix">
+                      <span class="acc fl">1</span>
+                      <img src="img/shoop.png " alt="" class="fl">
+                      <div class="price fl">
+                          <div class="fl">
+                          	已售68423<br/>
+                          	2.3折 ￥299
+                          </div>
+                          <b class="fr"></b>
+                          <em class="fr">￥51</em>
+
+                      </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="clearfix">
+                      <span class="acc fl">1</span>
+                      <img src="img/shoop.png " alt="" class="fl">
+                      <div class="price fl">
+                          <div class="fl">
+                          	已售68423<br/>
+                          	2.3折 ￥299
+                          </div>
+                          <b class="fr"></b>
+                          <em class="fr">￥51</em>
+
+                      </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="clearfix">
+                      <span class="acc fl">1</span>
+                      <img src="img/shoop.png " alt="" class="fl">
+                      <div class="price fl">
+                          <div class="fl">
+                          	已售68423<br/>
+                          	2.3折 ￥299
+                          </div>
+                          <b class="fr"></b>
+                          <em class="fr">￥51</em>
+
+                      </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="clearfix">
+                      <span class="acc fl">1</span>
+                      <img src="img/shoop.png " alt="" class="fl">
+                      <div class="price fl">
+                          <div class="fl">
+                          	已售68423<br/>
+                          	2.3折 ￥299
+                          </div>
+                          <b class="fr"></b>
+                          <em class="fr">￥51</em>
+                      </div>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <div class="more">
+            <h3>更多划算 逛起来！</h3>
+        </div>
+        <div class="family clearfix">
+            <div class="f_left fl"></div>
+            <table class="fr">
+                <tr>
+                    <td><a href="javascript:;">美食</a></td>
+                    <td><a href="javascript:;">美食</a></td>
+                    <td><a href="javascript:;">美食</a></td>
+                </tr>
+                <tr>
+                    <td><a href="javascript:;">美食</a></td>
+                    <td><a href="javascript:;">美食</a></td>
+                    <td><a href="javascript:;">美食</a></td>
+                </tr>
+                <tr>
+                    <td><a href="javascript:;">美食</a></td>
+                    <td><a href="javascript:;">美食</a></td>
+                    <td><a href="javascript:;">美食</a></td>
+                </tr>
+                <tr>
+                    <td><a href="javascript:;">美食</a></td>
+                    <td><a href="javascript:;">美食</a></td>
+                    <td><a href="javascript:;">美食</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="more">
+            <h3>更多划算 逛起来！</h3>
+            <a href="javascript:;"></a>
+        </div>
+        <div class="family clearfix">
+            <div class="f_left fl"></div>
+            <table class="fr">
+                <tr>
+                    <td><a href="javascript:;">美食</a></td>
+                    <td><a href="javascript:;">美食</a></td>
+                    <td><a href="javascript:;">美食</a></td>
+                </tr>
+                <tr>
+                    <td><a href="javascript:;">美食</a></td>
+                    <td><a href="javascript:;">美食</a></td>
+                    <td><a href="javascript:;">美食</a></td>
+                </tr>
+                <tr>
+                    <td><a href="javascript:;">美食</a></td>
+                    <td><a href="javascript:;">美食</a></td>
+                    <td><a href="javascript:;">美食</a></td>
+                </tr>
+                <tr>
+                    <td><a href="javascript:;">美食</a></td>
+                    <td><a href="javascript:;">美食</a></td>
+                    <td><a href="javascript:;">美食</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="more">
+            <h3>更多划算 逛起来！</h3>
+            <a href="javascript:;"></a>
+        </div>
+        <div class="family clearfix">
+            <div class="f_left fl"></div>
+            <table class="fr">
+                <tr>
+                    <td><a href="javascript:;">美食</a></td>
+                    <td><a href="javascript:;">美食</a></td>
+                    <td><a href="javascript:;">美食</a></td>
+                </tr>
+                <tr>
+                    <td><a href="javascript:;">美食</a></td>
+                    <td><a href="javascript:;">美食</a></td>
+                    <td><a href="javascript:;">美食</a></td>
+                </tr>
+                <tr>
+                    <td><a href="javascript:;">美食</a></td>
+                    <td><a href="javascript:;">美食</a></td>
+                    <td><a href="javascript:;">美食</a></td>
+                </tr>
+                <tr>
+                    <td><a href="javascript:;">美食</a></td>
+                    <td><a href="javascript:;">美食</a></td>
+                    <td><a href="javascript:;">美食</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="more">
+            <h3>更多划算 逛起来！</h3>
+            <a href="javascript:;"></a>
+        </div>
+        <div class="family clearfix">
+            <div class="f_left fl"></div>
+            <table class="fr">
+                <tr>
+                    <td><a href="javascript:;">美食</a></td>
+                    <td><a href="javascript:;">美食</a></td>
+                    <td><a href="javascript:;">美食</a></td>
+                </tr>
+                <tr>
+                    <td><a href="javascript:;">美食</a></td>
+                    <td><a href="javascript:;">美食</a></td>
+                    <td><a href="javascript:;">美食</a></td>
+                </tr>
+                <tr>
+                    <td><a href="javascript:;">美食</a></td>
+                    <td><a href="javascript:;">美食</a></td>
+                    <td><a href="javascript:;">美食</a></td>
+                </tr>
+                <tr>
+                    <td><a href="javascript:;">美食</a></td>
+                    <td><a href="javascript:;">美食</a></td>
+                    <td><a href="javascript:;">美食</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="more">
+            <h3>更多划算 逛起来！</h3>
+            <a href="javascript:;"></a>
+        </div>
+        <div class="logo">
+            <div>
+                <img src="img/apple.png" style="width:0.825rem; height:1.1rem;"alt="">
+                <p>IOS客户端</p>
+            </div>
+            <div>
+                <img src="img/apple.png" style="width:0.825rem; height:1.1rem;"alt="">
+                <p>IOS客户端</p>
+            </div>
+            <div class="last">
+                <img src="img/apple.png" style="width:0.825rem; height:1.1rem;"alt="">
+                <p>IOS客户端</p>
+            </div>
+        </div>
+        <div id="box">
+            <div class="zc clearfix">
+                <div class="fl zc_1">
+                    <a href="javascript:;"  class="a1">登录</a><a href="javascript:;">注册</a>
+                </div>
+                <div class="fr zc_2 clearfix">
+                    <i class="fl">TOP</i>
+                    <a href="javascript:;"class="fl"></a>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div>
+                <a href="javascript:;" class="a1">标准版</a><a href="javascript:;">电脑版</a>
+            </div>
+            <p class="footer">@2013 浙B2-20080224 服务中心</p>
+        </footer>
+    </body>
+</html>

@@ -1,2 +1,0 @@
-# yj-jhsuangithub.com
-juhuasuan
